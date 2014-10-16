@@ -1,1 +1,2 @@
-build/.module_cache
+/.module_cache/
+/build/
