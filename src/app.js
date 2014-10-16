@@ -18,4 +18,19 @@
 //   document.getElementById('example')
 // );
 
-//Trying a different app 
+//Trying to create another simpler app
+var simple = React.createClass({
+	render: function() {
+		return {
+			<div>
+				<h1>My first time</h1>
+			</div>
+		}
+	}
+});
+
+//now use the React render function to display this onto the DOM
+React.renderComponent(
+	<simple />,
+	document.getElementById('example')
+);
