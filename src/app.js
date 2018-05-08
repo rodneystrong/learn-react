@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Bleh from './components/Bleh/Bleh';
+import List from './components/List/List';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           This is where it all is
         </p>
         <Bleh />
+        <List />
       </div>
     );
   }
