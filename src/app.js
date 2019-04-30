@@ -4,7 +4,7 @@ import './App.css';
 import Bleh from './components/Bleh/Bleh';
 import List from './components/List/List';
 import products from './dataApi/schoolProducts';
-import Product from './components/product';
+import Product from './components/product/Product';
 
 class App extends Component {
   render() {
