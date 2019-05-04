@@ -12,7 +12,9 @@ import todosData from './dataApi/todosData';
 
 function App() {
   console.log(todosData);
-  todosData.map(item => <TodoItem key={item.id} todo={item})
+  const allTodos = todosData.map(item => (
+    <TodoItem key={item.id} todo={item} />
+  ));
 
   return (
     <div className="todo-list">
