@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Bleh from './components/Bleh/Bleh';
-import List from './components/List/List';
-import products from './dataApi/schoolProducts';
-import Product from './components/Product/Product';
+/*
+Let's practice props and mapping components on our todo list app!
 
-class App extends Component {
-  render() {
-    let productList = products.map(item => (
-      <Product key={item.id} product={item} />
-    ));
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">This is where it all is</p>
-        <p>another test of text</p>
-        <Bleh />
-        <List />
-        <h2>Products</h2>
-        {productList}
-      </div>
-    );
-  }
+I've created a js file with some todos data in it, which I'm imported into this file. (Normally this data would come from an API call, not a local file). 
+
+Challenge: Using the array map method, render a child component for each todo item in the todosData array and pass the relevant data to it.
+*/
+
+import React from 'react';
+import TodoItem from './TodoItem';
+import todosData from './todosData';
+
+function App() {
+  return (
+    <div className="todo-list">
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
+    </div>
+  );
 }
 
 export default App;
