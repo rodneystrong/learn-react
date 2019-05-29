@@ -1,26 +1,23 @@
+/*
+In the previous iteration of this todo list app, we pulled in todos data from a JSON file and mapped over it to display the todo items.
+
+Eventually we'll want to be able to modify the data, which will only happen if we've "loaded" the data in to the component's state
+
+Challenge: Change the <App /> component into a stateful class component and load the imported `todosData` into state.
+*/
+
 import React from "react"
+import TodoItem from "./TodoItem"
+import todosData from "./todosData"
 
-// Given a stateless functional component, add state to it
-// state should have a property called `isLoggedIn` which is a boolean
-// (true if logged in, false if not)
-// Then, give your best shot at rendering the word "in" if the user is logged in
-// or "out" if the user is logged out.
-
-class App extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            isLoggedIn: true
-        }
-    }
-    render() {
-        return (
-            <div>
-                <h1>You are currently logged {this.state.isLoggedIn ? 'in' : 'out' }</h1>
-            </div>
-        )
-    }
+function App() {
+    const todoItems = todosData.map(item => <TodoItem key={item.id} item={item}/>)
     
+    return (
+        <div className="todo-list">
+            {todoItems}
+        </div>
+    )
 }
 
 export default App
