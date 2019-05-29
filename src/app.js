@@ -10,7 +10,7 @@ import React from "react"
 import TodoItem from "./components/TodoItem/TodoItem"
 import todosData from "./dataApi/todosData"
 
-class App extends React.component {
+class App extends React.Component {
     constructor() {
         super()
         this.state = {
