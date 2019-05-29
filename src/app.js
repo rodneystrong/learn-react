@@ -1,20 +1,23 @@
 import React from "react"
+import TodoItem from './components/TodoItem/TodoItem'
+import todosData from './dataApi/todosData'
 
-function handleClick() {
-    console.log("I was clicked")
-}
-
-// https://reactjs.org/docs/events.html#supported-events
-
-function App() {
-    return (
-        <div>
-            <img onMouseOver={() => console.log('lel')} onMouseOut={() => console.log('Ooooouuuut')} src="https://www.fillmurray.com/200/100"/>
-            <br />
-            <br />
-            <button onClick={handleClick}>Click me</button>
-        </div>
-    )
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            todos: todosData
+        }
+    }
+    render() {
+        let todos = this.state.todos
+        const todoItems = todos.map((item)=><TodoItem key={item.id} item={item}/>)
+        return (
+            <div className="todo-list">
+                {todoItems}
+            </div>
+        )
+    }
 }
 
 export default App
