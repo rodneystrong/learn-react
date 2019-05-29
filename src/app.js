@@ -7,17 +7,27 @@ Challenge: Change the <App /> component into a stateful class component and load
 */
 
 import React from "react"
-import TodoItem from "./TodoItem"
-import todosData from "./todosData"
+import TodoItem from "./components/TodoItem/TodoItem"
+import todosData from "./dataApi/todosData"
 
-function App() {
-    const todoItems = todosData.map(item => <TodoItem key={item.id} item={item}/>)
+class App extends React.component {
+    constructor() {
+        super()
+        this.state = {
+            todos: todosData
+        }
+    }
+
+    render() {
+        let state = this.state
+        const todoItems = state.todos.map(item => <TodoItem key={item.id} item={item}/>)
+        return (
+            <div className="todo-list">
+                {todoItems}
+            </div>
+        )
+    }
     
-    return (
-        <div className="todo-list">
-            {todoItems}
-        </div>
-    )
 }
 
 export default App
