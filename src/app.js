@@ -6,12 +6,21 @@ import React from "react"
 // Then, give your best shot at rendering the word "in" if the user is logged in
 // or "out" if the user is logged out.
 
-function App() {
-    return (
-        <div>
-            <h1>You are currently logged (in/out)</h1>
-        </div>
-    )
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            
+        }
+    }
+    render() {
+        return (
+            <div>
+                <h1>You are currently logged (in/out)</h1>
+            </div>
+        )
+    }
+    
 }
 
 export default App
