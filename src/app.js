@@ -9,7 +9,7 @@ function handleClick() {
 function App() {
     return (
         <div>
-            <img src="https://www.fillmurray.com/200/100"/>
+            <img onMouseOver={() => console.log('lel')} onMouseOut={() => console.log('Ooooouuuut')} src="https://www.fillmurray.com/200/100"/>
             <br />
             <br />
             <button onClick={handleClick}>Click me</button>
