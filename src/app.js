@@ -6,15 +6,20 @@ class App extends React.Component {
         this.state = {
             count: 0
         }
+        this.increaseCount = this.increaseCount.bind(this)
     }
-    increaseCount = (num) => num+1;
+    increaseCount() {
+        this.setState(prevState => {
+            return {count: prevState.count + 1}
+        })
+    }
     
     render() {
             
         return (
             <div>
                 <h1>{this.state.count}</h1>
-                <button onClick={this.increaseCount(this.state.count)}>Change!</button>
+                <button onClick={this.increaseCount}>Change!</button>
             </div>
         )
     }
